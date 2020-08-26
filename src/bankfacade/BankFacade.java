@@ -25,8 +25,8 @@ public class BankFacade {
         cust1Accounts.add(new BankAccount(2));
         bankCustomer1 = new BankCustomer("Ice", cust1Accounts);
         ArrayList<AccountIf> cust2Accounts = new ArrayList();
-        cust1Accounts.add(new BankAccount(3));
-        cust1Accounts.add(new BankAccount(4));
+        cust2Accounts.add(new BankAccount(3));
+        cust2Accounts.add(new BankAccount(4));
         bankCustomer2 = new BankCustomer("Fam", cust2Accounts);
 }
     public void doDeposit(double amt, CustomerIf cust, int accNo) {
@@ -80,9 +80,11 @@ public class BankFacade {
        BankFacade bf = new BankFacade();
        bf.doDeposit(500,bankCustomer1,1);
        bf.doDeposit(200,bankCustomer1,2); 
-       bf.doDeposit(20,bankCustomer1,3);
-       bf.doDeposit(1000,bankCustomer1,4);
-       bf.getBankAccount(bankCustomer1,1);
+       bf.getBankAccount(bankCustomer1,2);
        bf.getBanCustomer("Ice");
+       bf.doDeposit(1000,bankCustomer2,3);
+       bf.doDeposit(150,bankCustomer2,4); 
+       bf.getBankAccount(bankCustomer2,3);
+       bf.getBanCustomer("Fam");
     }
 }
